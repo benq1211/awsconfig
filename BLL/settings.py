@@ -31,6 +31,8 @@ ALLOWED_HOSTS = ["192.168.1.217","192.168.1.112","127.0.0.1"]
 # Application definition
 
 INSTALLED_APPS = [
+    'asset.apps.AssetConfig',
+    'user.apps.UserConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -122,3 +124,4 @@ LOGOUT_REDIRECT_URL = '/'
 LOGIN_REDIRECT_URL = '/'
 admin.AdminSite.site_header = 'BLL运维系统管理后台'
 admin.AdminSite.site_title = '运维系统'
+AUTH_USER_MODEL = 'user.User'
