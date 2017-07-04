@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta content="" name="description" />
     <meta content="webthemez" name="author" />
-    <title>BLL运维管理系统L</title>
+    <title>BLL运维管理系统</title>
 	<!-- Bootstrap Styles-->
     <link href="{% static 'asset/css/bootstrap.css' %}" rel="stylesheet" />
      <!-- FontAwesome Styles-->
@@ -33,7 +33,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html"><strong><i class="icon fa fa-plane"></i> BRILLIANT</strong></a>
+                <a class="navbar-brand" href="index.html"><strong><i class="icon fa fa-plane"></i> BLL运维系统</strong></a>
 				<div id="sideNav" href="">
 		<i class="fa fa-bars icon"></i>
 		</div>
@@ -55,6 +55,7 @@
                                 </div>
                                 <div>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...</div>
                             </a>
+
                         </li>
                         <li class="divider"></li>
                         <li>
@@ -261,13 +262,13 @@
                     </li>
 
 					 <li>
-                        <a href="#"><i class="fa fa-sitemap"></i> Charts<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-sitemap"></i> 资产管理<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="chart.html">Charts JS</a>
+                                <a href="{% url 'asset:index' %}">资产列表</a>
                             </li>
                             <li>
-                                <a href="morris-chart.html">Morris Chart</a>
+                                <a href="morris-chart.html">项目列表</a>
                             </li>
 							</ul>
 						</li>
@@ -275,9 +276,7 @@
                         <a href="tab-panel.html"><i class="fa fa-qrcode"></i> Tabs & Panels</a>
                     </li>
 
-                    <li>
-                        <a href="table.html" class="active-menu"><i class="fa fa-table"></i> Responsive Tables</a>
-                    </li>
+
                     <li>
                         <a href="form.html"><i class="fa fa-edit"></i> Forms </a>
                     </li>
