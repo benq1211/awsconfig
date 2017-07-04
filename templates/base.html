@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-
+<html>
 {% load staticfiles %}
-{% load blog_tags  %}
+
 
 <head>
       <meta charset="utf-8" />
@@ -11,18 +10,18 @@
     <meta content="webthemez" name="author" />
     <title>BLL运维管理系统L</title>
 	<!-- Bootstrap Styles-->
-    <link href="{% static assets/css/bootstrap.css %}" rel="stylesheet" />
+    <link href="{% static 'asset/css/bootstrap.css' %}" rel="stylesheet" />
      <!-- FontAwesome Styles-->
-     <link href="  static assets/css/bootstrap.css %}" rel="stylesheet" />
-    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+     <link href=" {% static 'asset/css/bootstrap.css' %}" rel="stylesheet" />
+    <link href="{% static 'asset/css/font-awesome.css' %}" rel="stylesheet" />
      <!-- Morris Chart Styles-->
 
         <!-- Custom Styles-->
-    <link href="assets/css/custom-styles.css" rel="stylesheet" />
+    <link href="{% static 'asset/css/custom-styles.css' %}" rel="stylesheet" />
      <!-- Google Fonts-->
    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
      <!-- TABLE STYLES-->
-    <link href="assets/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+    <link href="{% static 'asset/js/dataTables/dataTables.bootstrap.css' %}" rel="stylesheet" />
 </head>
 <body>
     <div id="wrapper">
@@ -327,37 +326,37 @@
      <!-- /. WRAPPER  -->
     <!-- JS Scripts-->
     <!-- jQuery Js -->
-    <script src="assets/js/jquery-1.10.2.js"></script>
+    <script src="{% static 'asset/js/jquery-1.10.2.js' %}"></script>
       <!-- Bootstrap Js -->
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="{% static 'asset/js/bootstrap.min.js' %}"></script>
     <!-- Metis Menu Js -->
-    <script src="assets/js/jquery.metisMenu.js"></script>
+    <script src="{% static 'asset/js/jquery.metisMenu.js' %}"></script>
      <!-- DATA TABLE SCRIPTS -->
-    <script src="assets/js/dataTables/jquery.dataTables.js"></script>
-    <script src="assets/js/dataTables/dataTables.bootstrap.js"></script>
+    <script src="{% static 'asset/js/dataTables/jquery.dataTables.js' %}"></script>
+    <script src="{% static 'asset/js/dataTables/dataTables.bootstrap.js' %}"></script>
         <script>
             $(document).ready(function () {
                 $('#dataTables-example').dataTable();
             });
     </script>
          <!-- Custom Js -->
-    <script src="assets/js/custom-scripts.js"></script>
+    <script src="{% static 'asset/js/custom-scripts.js' %}"></script>
 
     <!-- Morris Chart Js -->
-    <script src="assets/js/morris/raphael-2.1.0.min.js"></script>
-    <script src="assets/js/morris/morris.js"></script>
+    <script src="{% static 'asset/js/morris/raphael-2.1.0.min.js' %}"></script>
+    <script src="{% static 'asset/js/morris/morris.js' %}"></script>
 
 
-	<script src="assets/js/easypiechart.js"></script>
-	<script src="assets/js/easypiechart-data.js"></script>
+	<script src="{% static 'asset/js/easypiechart.js' %}"></script>
+	<script src="{% static 'asset/js/easypiechart-data.js' %}"></script>
 
-	 <script src="assets/js/Lightweight-Chart/jquery.chart.js"></script>
+	 <script src="{% static 'asset/js/Lightweight-Chart/jquery.chart.js' %}"></script>
 
 
 
     <!-- Chart Js -->
-    <script type="text/javascript" src="assets/js/Chart.min.js"></script>
-    <script type="text/javascript" src="assets/js/chartjs.js"></script>
+    <script type="text/javascript" src="{% static 'asset/js/chart.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'asset/js/chartjs.js' %}"></script>
 
 </body>
 </html>
