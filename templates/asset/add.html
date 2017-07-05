@@ -1,0 +1,35 @@
+﻿{% extends 'base.html' %}
+{% load bootstrap %}
+ {% block main %}
+<form action="" method="post">
+    {% csrf_token %}
+</nav>
+        <!-- /. NAV SIDE  -->
+        <div id="page-wrapper" >
+		  <div class="header">
+                        <h1 class="page-header">
+                            <small>添加资产</small>
+                        </h1>
+						<ol class="breadcrumb">
+					  <li><a href="#">仪表盘</a></li>
+					  <li><a href="#">Forms</a></li>
+					  <li class="active">Data</li>
+					</ol>
+
+		</div>
+
+            <div id="page-inner">
+                       <div class="row">
+                        <div class="col-xs-12">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="card-title">
+                                        <div class="title">添加资产</div>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    填写资产基本信息
+                                    <div class="sub-title">{{ form|bootstrap_horizontal}}</div>
+ <button class="ui button" type="submit">添加</button>
+ </form>
+{% endblock main %}

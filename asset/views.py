@@ -10,3 +10,7 @@ class IndexView(ListView):
 
 
 
+class AssetCreateView(CreateView):
+    model =Asset
+    template_name= 'asset/add.html'
+    fields = ['hostname','ip','port','group','username','password','use_default_auth','is_active']
