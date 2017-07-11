@@ -22,7 +22,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
 
-                             <a href="#" class="btn btn-info"> 添加资产</a>
+                             <a href="{% url 'asset:add' %}" class="btn btn-info"> 添加资产</a>
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
@@ -44,7 +44,7 @@
                                         <tr class="odd gradeX">
                                             <td>{{ asset.hostname }}</td>
                                             <td>{{ asset.ip }}</td>
-                                            <td>{{ asset.group }}</td>
+                                            <td>{{  asset.group.name }}</td>
                                             <td class="center">{{ asset.env }}</td>
                                             <td class="center">{{ asset.cpu }}</td>
                                             <td class="center">{{ asset.memory }}</td>

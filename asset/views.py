@@ -8,7 +8,7 @@ class IndexView(ListView):
     model = Asset
     template_name = 'asset/index.html'
     context_object_name = 'asset_list'
-    fields = ['ip', 'hostname', 'group.name','env','cpu','memory','disk']
+    fields = ['ip', 'hostname', 'group','env','cpu','memory','disk']
 
 
 
@@ -16,6 +16,7 @@ class AssetCreateView(CreateView):
     model =Asset
     template_name= 'asset/add.html'
     fields = ['hostname','ip','port','group','username','password','use_default_auth','is_active']
+    success_url = reverse_lazy('asset:index')
 
 class GroupView(ListView):
     model = AssetGroup
