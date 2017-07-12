@@ -4,6 +4,12 @@ from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, DetailView, DeleteView, UpdateView
 from .models import Asset, AssetGroup
 # Create your views here.
+
+def index(request):
+    asset_list = Asset.objects.all()
+
+    return render(request,'asset/index.html',{'asset_list':asset_list})
+
 class IndexView(ListView):
     model = Asset
     template_name = 'asset/index.html'
