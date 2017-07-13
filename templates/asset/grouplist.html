@@ -40,7 +40,8 @@
                                        {% for group in group_list %}
                                         <tr class="odd gradeX">
                                             <td>{{ group.name }}</td>
-                                            <td>{{ group.assert_set.count }}</td>
+
+                                           <td>{{ group.asset_set.count }}</td>
                                             <td>{{ group.comment }}</td>
                                             <td> <a href="{% url 'asset:groupdel' pk=group.id  %}" </a><button class="btn btn-primary btn-small" type="button">删除</button>
                                              <a href="{% url 'asset:groupupdate' pk=group.id  %}" </a><button class="btn btn-primary btn-small" type="button">更新</button></td>

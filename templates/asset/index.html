@@ -37,6 +37,7 @@
                                             <th>cpu</th>
                                             <th>内存</th>
                                             <th>硬盘</th>
+                                            <th>操作</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -50,6 +51,8 @@
                                             <td class="center">{{ asset.cpu }}</td>
                                             <td class="center">{{ asset.memory }}</td>
                                             <td class="center">{{ asset.disk }}</td>
+                                            <td> <a href="{% url 'asset:del' pk=asset.id  %}" </a><button class="btn btn-primary btn-small" type="button">删除</button>
+                                             <a href="{% url 'asset:update' pk=asset.id  %}" </a><button class="btn btn-primary btn-small" type="button">更新</button></td>
                                         </tr>
                                         {% empty %}
                                          {% endfor %}

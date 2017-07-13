@@ -24,6 +24,19 @@ class AssetCreateView(CreateView):
     fields = ['hostname','ip','port','group','username','password','use_default_auth','is_active']
     success_url = reverse_lazy('asset:index')
 
+class AssetDeleteView(DeleteView):
+    model = Asset
+
+    success_url = reverse_lazy('asset:index')
+
+
+class AssetUpdateView(UpdateView):
+    model = Asset
+   # fields = ['name','comment']
+    fields = '__all__'
+    template_name_suffix = '_update_form'
+    success_url = reverse_lazy('asset:index')
+
 class GroupView(ListView):
     model = AssetGroup
     template_name = 'asset/grouplist.html'
