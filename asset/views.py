@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.shortcuts import get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
+from django.core.urlresolvers import reverse
+
 import boto3
 
 from django.views.generic import ListView, CreateView, DetailView, DeleteView, UpdateView
@@ -32,15 +34,28 @@ class AssetDeleteView(DeleteView):
     success_url = reverse_lazy('asset:index')
 
 
-def AssetUpdateByAws(request,asset_id):
-    asset = get_object_or_404(Asset,asset=asset_id)
-    ec2 = boto3.resource('ec2')
-    instance = ec2.Instance(asset.instance)
-    asset.instance_type= instance.instance_type
-    asset.status = instance.state
-    asset.security_group = instance.security_groups
-    asset.save()
+def AssetUpdateByAws(request,pk):
 
+    ec2 = boto3.resource('ec2')
+    asset = get_object_or_404(Asset, id=pk)
+
+    instance = ec2.Instance(asset.instance)
+
+    try:
+
+        asset.ip =  instance.public_ip_address
+        print(instance.public_ip_address)
+        asset.instance_type= instance.instance_type
+        asset.instance_status = instance.state['Name']
+        print(asset.instance_status)
+        asset.security_group = instance.security_groups[0]['GroupName']
+        asset.save()
+    except Exception as e:
+
+        return redirect(reverse('asset:index'))
+     #
+
+    return redirect(reverse('asset:index'))
 
 class AssetUpdateView(UpdateView):
     model = Asset

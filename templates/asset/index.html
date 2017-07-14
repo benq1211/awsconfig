@@ -34,9 +34,9 @@
                                             <th>ip</th>
                                             <th>项目</th>
                                             <th>操作系统</th>
-                                            <th>cpu</th>
-                                            <th>内存</th>
-                                            <th>硬盘</th>
+                                            <th>实例类型</th>
+                                            <th>实例状态</th>
+                                            <th>安全组</th>
                                             <th>操作</th>
                                         </tr>
                                     </thead>
@@ -46,14 +46,18 @@
                                             <td>{{ asset.hostname }}</td>
                                             <td>{{ asset.ip }}</td>
                                             <td> {{ asset.group.name }}</td>
-
                                             <td class="center">{{ asset.env }}</td>
-                                            <td class="center">{{ asset.cpu }}</td>
-                                            <td class="center">{{ asset.memory }}</td>
-                                            <td class="center">{{ asset.disk }}</td>
+                                            <td class="center">{{ asset.instance_type }}</td>
+                                            <td class="center">{{ asset.instance_status }}</td>
+                                            <td class="center">{{ asset.security_group }}</td>
                                             <td> <a href="{% url 'asset:del' pk=asset.id  %}" </a><button class="btn btn-primary btn-small" type="button">删除</button>
-                                             <a href="{% url 'asset:update' pk=asset.id  %}" </a><button class="btn btn-primary btn-small" type="button">更新</button></td>
+                                                <a href="{% url 'asset:update' pk=asset.id  %}" </a><button class="btn btn-primary btn-small" type="button">更新</button>
+                                                 <a href="{% url 'asset:awsupdate' pk=asset.id  %}" </a><button class="btn btn-primary btn-small" type="button">自动更新</button>
+                                            </td>
                                         </tr>
+                                         {% if error_msg %}
+                                      <p>{{ error_msg }}</p>
+                                         {% endif %}
                                         {% empty %}
                                          {% endfor %}
                                     </tbody>
