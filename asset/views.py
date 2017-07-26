@@ -25,7 +25,7 @@ class IndexView(ListView):
 class AssetCreateView(CreateView):
     model =Asset
     template_name= 'asset/add.html'
-    fields = ['hostname','ip','port','group','username','password','use_default_auth','is_active']
+    fields = ['hostname','ip','port','group','instance','username','password','use_default_auth','is_active']
     success_url = reverse_lazy('asset:index')
 
 class AssetDeleteView(DeleteView):
@@ -34,6 +34,7 @@ class AssetDeleteView(DeleteView):
     success_url = reverse_lazy('asset:index')
 
 
+#单台机器自动更新
 def AssetUpdateByAws(request,pk):
 
     ec2 = boto3.resource('ec2')
@@ -44,10 +45,10 @@ def AssetUpdateByAws(request,pk):
     try:
 
         asset.ip =  instance.public_ip_address
-        print(instance.public_ip_address)
+
         asset.instance_type= instance.instance_type
         asset.instance_status = instance.state['Name']
-        print(asset.instance_status)
+
         asset.security_group = instance.security_groups[0]['GroupName']
         asset.save()
     except Exception as e:
