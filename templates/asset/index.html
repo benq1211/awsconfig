@@ -22,7 +22,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
 
-                             <a href="#" class="btn btn-info"> 添加资产</a>
+                             <a href="{% url 'asset:add'  %}" class="btn btn-info"> 添加资产</a>
                         </div>
                         <div class="panel-body">
                             <div class="table-responsive">
@@ -32,7 +32,7 @@
                                         <tr>
                                             <th>主机名</th>
                                             <th>ip</th>
-                                            <th>项目</th>
+
                                             <th>操作系统</th>
                                             <th>cpu</th>
                                             <th>内存</th>
@@ -44,7 +44,6 @@
                                         <tr class="odd gradeX">
                                             <td>{{ asset.hostname }}</td>
                                             <td>{{ asset.ip }}</td>
-                                            <td>{{ asset.group }}</td>
                                             <td class="center">{{ asset.env }}</td>
                                             <td class="center">{{ asset.cpu }}</td>
                                             <td class="center">{{ asset.memory }}</td>
